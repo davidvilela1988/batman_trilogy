@@ -1,0 +1,84 @@
+@use "variaveis";
+
+.hero {
+  padding: 5.6vw;
+  min-height: 80vh;
+  background-image: url(../images/batman2.jpg);
+  background-size: cover;
+
+  &__content {
+    max-width: 640px;
+
+    .title--small {
+      font-weight: 300;
+      text-align: center;
+      margin-left: 100px;
+      padding: 0;
+      color: variaveis.$colorTextMain;
+      font-style: italic;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    background-size: contain;
+    background-repeat: no-repeat;
+    min-height: 35vh;
+
+    &__content {
+      &__branding {
+        .title--small {
+          margin: 0 0;
+          font-size: 0.4em;
+          line-height: 2em;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero {
+    background-size: contain;
+    background-repeat: no-repeat;
+    min-height: 45vh;
+
+    &__content {
+      &__branding {
+        img {
+          max-width: 60%;
+        }
+
+        .title--small {
+          margin: 0 0;
+          font-size: 0.9em;
+          line-height: 2em;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 5000px) {
+  .hero {
+    max-width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 5.6vw;
+    min-height: 100vh;
+
+    &__content {
+      &__branding {
+        img {
+          max-width: 100%;
+        }
+
+        .title--small {
+          margin: 0 0;
+          line-height: 2em;
+        }
+      }
+    }
+  }
+}

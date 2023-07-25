@@ -1,0 +1,59 @@
+@use "header";
+@use "variaveis";
+@use "hero";
+@use "shows";
+@use "actors";
+@use "director";
+@use "store";
+@use "footer";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Condensed", sans-serif;
+  list-style: none;
+
+  @media (max-width: 1024px) {
+    position: relative;
+    margin: 0 auto;
+    max-width: 100%;
+    align-items: center;
+  }
+}
+
+body {
+  background-color: variaveis.$colorBackground;
+}
+
+@mixin text($fontSize: 16px) {
+  font-size: $fontSize;
+
+  line-height: $fontSize + 10px;
+  color: variaveis.$colorTextMain;
+}
+
+@mixin title($fontSize: 40px) {
+  @include text($fontSize);
+  color: variaveis.$colorTextSecundary;
+}
+
+.text--big {
+  @include text(18px);
+  color: variaveis.$colorTextMain;
+}
+
+.text {
+  @include text;
+  color: variaveis.$colorTextMain;
+}
+
+.title {
+  @include title;
+  color: variaveis.$colorTextTerciary;
+}
+
+.title--small {
+  @include title(28px);
+  color: variaveis.$colorTextTerciary;
+}
